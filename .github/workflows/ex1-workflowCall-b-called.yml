@@ -23,6 +23,8 @@ jobs:
         id: check
         run: |
           EXPECTED="hello"
+          echo "expected value: " "${EXPECTED}"
+          echo "received value: " "${{ inputs.test_value }}"
           if [ "${{ inputs.test_value }}" = "$EXPECTED" ]; then
             echo "result=true" >> $GITHUB_OUTPUT
           else
