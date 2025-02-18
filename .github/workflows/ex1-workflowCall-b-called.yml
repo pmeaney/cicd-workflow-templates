@@ -1,0 +1,29 @@
+# .github/workflows/workflow_b_called.yml
+name: Verifier (B)
+
+on:
+  workflow_call:
+    inputs:
+      test_value:
+        required: true
+        type: string
+    outputs:
+      matches:
+        description: "Whether value matches expected"
+        value: ${{ jobs.verify.outputs.does_match }}
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    outputs:
+      does_match: ${{ steps.check.outputs.result }}
+    steps:
+      - name: Verify Value
+        id: check
+        run: |
+          EXPECTED="hello"
+          if [ "${{ inputs.test_value }}" = "$EXPECTED" ]; then
+            echo "result=true" >> $GITHUB_OUTPUT
+          else
+            echo "result=false" >> $GITHUB_OUTPUT
+          fi

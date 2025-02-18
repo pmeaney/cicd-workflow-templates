@@ -1,0 +1,20 @@
+# .github/workflows/workflow_a_caller.yml
+name: Caller (A)
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  call_verifier:
+    uses: ./.github/workflows/workflow_b_called.yml
+    with:
+      test_value: "hello"
+
+  next_step:
+    needs: call_verifier
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Result
+        run: |
+          echo "Value matched: ${{ needs.call_verifier.outputs.matches }}"
