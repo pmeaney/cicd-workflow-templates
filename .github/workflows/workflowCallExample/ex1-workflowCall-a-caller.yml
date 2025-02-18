@@ -2,9 +2,9 @@
 # sends a value to ex1-workflowCall-b-called.yml
 name: Caller (A)
 
-on:
-  push:
-    branches: [main]
+# on:
+#   push:
+#     branches: [main]
 
 jobs:
   call_verifier:
