@@ -22,7 +22,8 @@ jobs:
 
   # Create a final summary of all actions taken
   deployment-summary:
-    needs: [database, cms, frontend]
+    needs: [database]
+    # needs: [database, cms, frontend]
     runs-on: ubuntu-latest
     steps:
       - name: Create Summary
