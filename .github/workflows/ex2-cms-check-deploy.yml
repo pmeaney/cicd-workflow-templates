@@ -1,4 +1,3 @@
-# .github/workflows/ex2-cms-check-deploy.yml
 name: CMS Check and Deploy Simulation
 
 on:

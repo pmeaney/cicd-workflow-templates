@@ -1,4 +1,3 @@
-# .github/workflows/db-init.yml
 name: Database Check and Init Simulation
 
 on:
