@@ -1,4 +1,5 @@
-# .github/workflows/workflow_b_called.yml
+# .github/workflows/ex1-workflowCall-b-called.yml
+# receives value from ex1-workflowCall-a-caller.yml
 name: Verifier (B)
 
 on:

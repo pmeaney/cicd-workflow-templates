@@ -1,4 +1,5 @@
-# .github/workflows/workflow_a_caller.yml
+# .github/workflows/ex1-workflowCall-a-caller.yml
+# sends a value to ex1-workflowCall-b-called.yml
 name: Caller (A)
 
 on:
@@ -7,7 +8,7 @@ on:
 
 jobs:
   call_verifier:
-    uses: ./.github/workflows/workflow_b_called.yml
+    uses: ./.github/workflows/ex1-workflowCall-b-called.yml
     with:
       test_value: "hello"
 
