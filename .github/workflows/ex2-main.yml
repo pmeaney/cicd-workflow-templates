@@ -8,7 +8,7 @@ on:
 jobs:
   # First, check database status/initialize if needed
   database:
-    uses: ./.github/workflows/ex2-stackDeployExample/ex2-db-init.yml
+    uses: ./.github/workflows/ex2-db-init.yml
 
   # # Deploy CMS if needed - depends on DB being ready
   # cms:
